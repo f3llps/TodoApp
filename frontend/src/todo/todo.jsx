@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
+import PageHeader from '../template/pageHeader'
+import TodoForm from '../todo/todoForm'
+import TodoList from '../todo/todoList'
+
 
 export default class Todo extends Component{
     render(){
         return (
             <div> 
-                <h1>Todo aaas</h1>
+                <PageHeader name='Tarefas' small ='Cadastro' />
+                <TodoForm/>
+                <TodoList/>
             </div>
         )
     }
