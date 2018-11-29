@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+
 import PageHeader from '../template/pageHeader'
 import TodoForm from '../todo/todoForm'
 import TodoList from '../todo/todoList'
-import axios from 'axios'
+
 
 export default class Todo extends Component {
 
@@ -19,6 +21,9 @@ export default class Todo extends Component {
     }
 
     handleAdd() {
+        const description = this.state.description
+        axios.post('localhost:8080/api/todos', { description })
+        .then(res => console.log('Retornou.'))
     }
 
     render() {
